@@ -1,0 +1,123 @@
+---
+import Layout from "../layouts/Layout.astro";
+import {
+  profile,
+  experience,
+  earlierRoles,
+  projects,
+  skills,
+  education,
+} from "../data/resume";
+---
+
+<Layout
+  title={`${profile.name} — ${profile.title}`}
+  description={profile.bio}
+>
+  <nav class="pinned-nav">
+    <div class="wrap pinned-nav-inner">
+      <img class="pinned-avatar" src="/avatar.jpg" alt={profile.name} width="28" height="28" />
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="/Haneet_Singh_Resume.docx" download>Résumé</a>
+    </div>
+  </nav>
+
+  <div class="wrap">
+    <header class="hero">
+      <img class="avatar" src="/avatar.jpg" alt={profile.name} width="96" height="96" />
+      <h1>{profile.name}</h1>
+      <p class="title">{profile.title} — {profile.tagline}</p>
+      <p class="location">{profile.location} · {profile.email}</p>
+      <p class="bio">{profile.bio}</p>
+      <nav class="links">
+        {profile.social.map((s) => (
+          <a href={s.href} target="_blank" rel="noopener noreferrer">{s.label}</a>
+        ))}
+        <a href="/Haneet_Singh_Resume.docx" download class="resume-link">Download résumé</a>
+      </nav>
+    </header>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      {experience.map((job) => (
+        <div class="entry">
+          <div class="entry-head">
+            <h3>{job.role}</h3>
+            <span class="period">{job.period}</span>
+          </div>
+          <p class="org">{job.org} · {job.location}</p>
+          <ul>
+            {job.bullets.map((b) => <li>{b}</li>)}
+          </ul>
+        </div>
+      ))}
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3>Earlier roles</h3>
+          <span class="period">2012 — 2020</span>
+        </div>
+        {earlierRoles.map((r) => (
+          <p class="earlier"><strong>{r.role}</strong> — {r.summary}</p>
+        ))}
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      {projects.map((p) => (
+        <div class="project">
+          <h3>
+            {p.href ? <a href={p.href} target="_blank" rel="noopener noreferrer">{p.name}</a> : p.name}
+          </h3>
+          <p>{p.description}</p>
+          <div class="tags">
+            {p.tags.map((t) => <span>{t}</span>)}
+          </div>
+        </div>
+      ))}
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        {Object.entries(skills).map(([category, list]) => (
+          <div>
+            <h3>{category}</h3>
+            <p>{list.join(", ")}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <div class="entry">
+        <div class="entry-head">
+          <h3>{education.degree}</h3>
+          <span class="period">{education.period}</span>
+        </div>
+        <p class="org">{education.school}</p>
+      </div>
+    </section>
+
+    <footer>
+      &copy; {new Date().getFullYear()} {profile.name}
+    </footer>
+  </div>
+</Layout>
+
+<script>
+  const nav = document.querySelector(".pinned-nav");
+  const hero = document.querySelector("header.hero");
+  if (nav && hero) {
+    const observer = new IntersectionObserver(
+      ([entry]) => nav.classList.toggle("is-visible", !entry.isIntersecting),
+      { rootMargin: "-60px 0px 0px 0px" },
+    );
+    observer.observe(hero);
+  }
+</script>
