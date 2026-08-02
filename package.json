@@ -1,0 +1,23 @@
+{
+  "name": "portfolio",
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "generate-resume": "tsx scripts/generate-resume.ts",
+    "prebuild": "npm run generate-resume",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^7.1.6"
+  },
+  "devDependencies": {
+    "pdfkit": "^0.19.1",
+    "tsx": "^4.23.4"
+  }
+}
