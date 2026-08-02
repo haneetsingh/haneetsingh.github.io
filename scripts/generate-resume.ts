@@ -22,7 +22,7 @@ const outPath = path.join(
 const doc = new PDFDocument({
   size: "LETTER",
   margins: { top: 54, bottom: 54, left: 54, right: 54 },
-  info: { Title: `${profile.name} — Resume`, Author: profile.name },
+  info: { Title: `${profile.name}: Resume`, Author: profile.name },
 });
 doc.pipe(createWriteStream(outPath));
 
@@ -50,7 +50,7 @@ const heading = (text: string) => {
 const jobHeader = (role: string, org: string, location: string, period: string) => {
   const startY = doc.y;
   doc.fontSize(10.5).fillColor(TEXT).font("Helvetica-Bold").text(role, { continued: false });
-  doc.fontSize(9.5).fillColor(DIM).font("Helvetica").text(`${org} — ${location}`);
+  doc.fontSize(9.5).fillColor(DIM).font("Helvetica").text(`${org}: ${location}`);
   const afterY = doc.y;
   doc
     .fontSize(9)
@@ -71,7 +71,7 @@ const bullet = (text: string) => {
 
 // Header
 doc.fontSize(22).fillColor(TEXT).font("Helvetica-Bold").text(profile.name);
-doc.fontSize(11).fillColor(ACCENT).font("Helvetica").text(`${profile.title} — ${profile.tagline}`);
+doc.fontSize(11).fillColor(ACCENT).font("Helvetica").text(`${profile.title}: ${profile.tagline}`);
 doc.moveDown(0.2);
 doc
   .fontSize(9.5)
@@ -104,9 +104,9 @@ resumeExperience.forEach((job, i) => {
 });
 
 doc.moveDown(0.5);
-doc.fontSize(9.5).fillColor(TEXT).font("Helvetica-Bold").text("Earlier roles (2012 — 2020)");
+doc.fontSize(9.5).fillColor(TEXT).font("Helvetica-Bold").text("Earlier roles (2012 – 2020)");
 doc.moveDown(0.2);
-earlierRoles.forEach((r) => bullet(`${r.role} — ${r.summary}`));
+earlierRoles.forEach((r) => bullet(`${r.role}: ${r.summary}`));
 
 // Education
 heading("Education");

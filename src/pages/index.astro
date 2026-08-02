@@ -11,7 +11,7 @@ import {
 ---
 
 <Layout
-  title={`${profile.name} — ${profile.title}`}
+  title={`${profile.name}: ${profile.title}`}
   description={profile.bio}
 >
   <nav class="pinned-nav">
@@ -29,7 +29,7 @@ import {
     <header class="hero">
       <img class="avatar" src="/avatar.jpg" alt={profile.name} width="96" height="96" />
       <h1>{profile.name}</h1>
-      <p class="title">{profile.title} — {profile.tagline}</p>
+      <p class="title">{profile.title}: {profile.tagline}</p>
       <p class="location">{profile.location} · {profile.email}</p>
       <p class="bio">{profile.bio}</p>
       <nav class="links">
@@ -58,10 +58,10 @@ import {
       <div class="entry">
         <div class="entry-head">
           <h3>Earlier roles</h3>
-          <span class="period">2012 — 2020</span>
+          <span class="period">2012 – 2020</span>
         </div>
         {earlierRoles.map((r) => (
-          <p class="earlier"><strong>{r.role}</strong> — {r.summary}</p>
+          <p class="earlier"><strong>{r.role}</strong>: {r.summary}</p>
         ))}
       </div>
     </section>
