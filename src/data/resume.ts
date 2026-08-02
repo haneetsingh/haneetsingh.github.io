@@ -134,7 +134,7 @@ export const projects = [
   {
     name: "Liberty Mutual — Enterprise Platform",
     description:
-      "Technical leadership on an enterprise platform supporting thousands of users in a regulated environment. Owned design and delivery of core platform capabilities behind critical operational workflows.",
+      "Technical leadership on an enterprise platform used by thousands of people in a regulated industry. Owned the design and delivery of the core features that run day-to-day operations.",
     tags: ["TypeScript", "Next.js", "Node.js"],
     href: "",
   },
@@ -162,7 +162,7 @@ export const projects = [
   {
     name: "MyLook",
     description:
-      "AR-based omni-channel shopping experience letting users try on and buy contact lenses. Built the frontend for an early augmented-reality commerce product.",
+      "AR shopping experience for trying on and buying contact lenses online. Built the frontend for one of the earlier augmented-reality commerce products.",
     tags: ["JavaScript", "AR", "E-commerce"],
     href: "",
   },
