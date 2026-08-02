@@ -5,7 +5,7 @@
   --text: #e8eaed;
   --text-dim: #9aa1ac;
   --accent: #6ee7b7;
-  --max-width: 780px;
+  --max-width: 960px;
   color-scheme: dark;
 }
 
@@ -113,7 +113,6 @@ header.hero .location {
 }
 
 header.hero p.bio {
-  max-width: 60ch;
   color: var(--text-dim);
 }
 
@@ -168,7 +167,7 @@ section h2 {
 .entry-head {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: flex-start;
   flex-wrap: wrap;
   gap: 0.25rem 1rem;
 }
@@ -176,18 +175,48 @@ section h2 {
 .entry-head h3 {
   margin: 0;
   font-size: 1.05rem;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* Job titles can run long ("Company - Role (...)"), so instead of the date
+   wrapping to its own line when the title takes the full row, float the
+   date and let the title text wrap around it. */
+.entry-head:has(.job-title) {
+  display: block;
+}
+
+.entry-head:has(.job-title)::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.entry-head:has(.job-title) .period {
+  float: right;
+  margin-left: 1rem;
+}
+
+.entry-head h3.job-title {
+  font-style: italic;
 }
 
 .entry-head .period {
   color: var(--text-dim);
   font-size: 0.85rem;
   white-space: nowrap;
+  font-style: italic;
+  flex-shrink: 0;
 }
 
 .entry .org {
   color: var(--accent);
   font-size: 0.9rem;
   margin: 0.15rem 0 0.75rem;
+}
+
+.entry .org.job-location {
+  font-style: italic;
 }
 
 .entry ul {
@@ -302,5 +331,14 @@ footer {
   .pinned-nav-inner a:last-child {
     margin-left: 1.5rem;
     padding-right: 0.5rem;
+  }
+
+  /* On narrow screens, floating the date next to a long italic title
+     squeezes the title text into an awkward column. Stack instead. */
+  .entry-head:has(.job-title) .period {
+    float: none;
+    display: block;
+    margin-left: 0;
+    margin-bottom: 0.2rem;
   }
 }
