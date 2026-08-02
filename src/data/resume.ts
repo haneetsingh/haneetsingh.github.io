@@ -5,7 +5,7 @@ export const profile = {
   location: "Toronto, Canada",
   email: "singh.haneet007@gmail.com",
   phone: "(647) 868-3930",
-  bio: "Fifteen years building web products, the last several years at a staff or lead level across fintech, supply chain and banking. I own codebases end to end, from architecture and hands-on delivery to managing the team that ships it. TypeScript is home base across the stack: React, Next.js, Node.js. Most of that time has been spent dropped into regulated or high-stakes environments, where the job is getting a team moving fast without breaking things.",
+  bio: "Fifteen years building web products, the last several years at a staff or lead level across fintech, supply chain and banking. I own codebases end to end, from architecture and hands-on delivery to managing the team that ships it. TypeScript is home base across the stack - React, Next.js, Node.js. Most of that time has been spent dropped into regulated or high-stakes environments, where the job is getting a team moving fast without breaking things.",
   social: [
     { label: "GitHub", href: "https://github.com/haneetsingh" },
     { label: "LinkedIn", href: "https://linkedin.com/in/haneetsingh/" },

@@ -71,7 +71,7 @@ const bullet = (text: string) => {
 
 // Header
 doc.fontSize(22).fillColor(TEXT).font("Helvetica-Bold").text(profile.name);
-doc.fontSize(11).fillColor(ACCENT).font("Helvetica").text(`${profile.title}: ${profile.tagline}`);
+doc.fontSize(11).fillColor(ACCENT).font("Helvetica").text(`${profile.title} - ${profile.tagline}`);
 doc.moveDown(0.2);
 doc
   .fontSize(9.5)
