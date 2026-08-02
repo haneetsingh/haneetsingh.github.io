@@ -61,11 +61,14 @@ body {
   object-fit: cover;
   border: 1px solid var(--border);
   margin-right: 0.25rem;
+  flex-shrink: 0;
 }
 
 .pinned-nav-inner a {
   color: var(--text-dim);
   text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .pinned-nav-inner a:hover {
@@ -282,5 +285,22 @@ footer {
   }
   header.hero h1 {
     font-size: 1.8rem;
+  }
+
+  .pinned-nav-inner {
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    mask-image: linear-gradient(to right, transparent, black 12px, black calc(100% - 24px), transparent);
+    padding-right: 0.75rem;
+  }
+
+  .pinned-nav-inner::-webkit-scrollbar {
+    display: none;
+  }
+
+  .pinned-nav-inner a:last-child {
+    margin-left: 1.5rem;
+    padding-right: 0.5rem;
   }
 }
