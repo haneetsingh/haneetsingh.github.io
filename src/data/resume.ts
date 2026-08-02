@@ -6,6 +6,7 @@ export const profile = {
   email: "singh.haneet007@gmail.com",
   phone: "(647) 868-3930",
   bio: "Fifteen years building web products, the last several years at a staff or lead level across fintech, supply chain and banking. I own codebases end to end, from architecture and hands-on delivery to managing the team that ships it. TypeScript is home base across the stack - React, Next.js, Node.js. Most of that time has been spent dropped into regulated or high-stakes environments, where the job is getting a team moving fast without breaking things.",
+  metaDescription: "Portfolio of Haneet Singh, a Toronto-based technical lead and senior software engineer working in TypeScript, Next.js, and Node.js.",
   social: [
     { label: "GitHub", href: "https://github.com/haneetsingh" },
     { label: "LinkedIn", href: "https://linkedin.com/in/haneetsingh/" },
@@ -47,7 +48,7 @@ export const experience = [
     period: "Apr 2024 – Feb 2025",
     bullets: [
       "Led consulting engagements end to end, translating client business goals into a technical plan the team could actually execute.",
-      "Built full-stack solutions in Next.js, React, Node.js and PostgreSQL, staying hands-on rather than just reviewing other people's code.",
+      "Built full-stack solutions in Next.js, React, Node.js and PostgreSQL, staying hands-on in the codebase alongside the team.",
       "Did regular code review and acted as the technical backstop when the team hit hard problems.",
       "Managed and mentored engineers directly, including performance feedback and career development conversations.",
       "Worked across teams and with stakeholders to turn technical trade-offs into recommendations non-technical people could act on.",
@@ -62,7 +63,7 @@ export const experience = [
       "Owned the full development lifecycle for an in-house product: roadmap, milestones and shipping.",
       "Built the core product on React/Next.js, Express.js and PostgreSQL/MongoDB, and managed the infrastructure it ran on.",
       "Stayed hands-on with a large share of the codebase and ran thorough code reviews to keep quality high across the team.",
-      "Managed a small development team, with regular 1:1s and real feedback rather than box-checking.",
+      "Managed a small development team, running regular 1:1s and giving real, specific feedback.",
       "Worked with product owners to build POCs and prototypes that tested whether an idea was worth building out.",
       "Wrote documentation and tests that made it easier for new engineers to get up to speed.",
     ],
