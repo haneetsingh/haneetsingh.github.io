@@ -16,17 +16,25 @@ export const profile = {
 
 export const experience = [
   {
-    role: "Software Engineering Consultant",
+    role: "Software Engineering Consultant (Senior Software Engineer, Liberty Mutual)",
     org: "Self-employed",
     location: "Remote",
-    period: "Mar 2025 — Present",
+    period: "Oct 2025 — Present",
     bullets: [
-      "Leading a platform engagement with Liberty Mutual (Oct 2025–present) as Senior Software Engineer, providing technical leadership on an enterprise platform supporting thousands of users in a regulated environment.",
+      "Providing technical leadership on an enterprise platform supporting thousands of users in a regulated environment.",
       "Own the design and delivery of core platform capabilities that support critical operational workflows for the business.",
       "Set engineering standards, code review practices, and process improvements for the team.",
       "Guide engineers through complex technical implementations while keeping solutions scalable and maintainable.",
       "Work with product and engineering leadership to keep architecture decisions aligned with both business goals and compliance requirements.",
-      "Built and maintained web applications for the Everstream Analytics supply chain risk platform (Mar–Aug 2025) using TypeScript, Next.js, Tailwind CSS, and Django, with a strong focus on accessibility and pixel-accurate UI.",
+    ],
+  },
+  {
+    role: "Software Engineering Consultant (Software Engineer, Everstream Analytics)",
+    org: "Self-employed",
+    location: "Remote",
+    period: "Mar 2025 — Aug 2025",
+    bullets: [
+      "Built and maintained web applications for the Everstream Analytics supply chain risk platform using TypeScript, Next.js, Tailwind CSS, and Django, with a strong focus on accessibility and pixel-accurate UI.",
       "Built an interactive geospatial incidents map visualizing thousands of global disruption events, with filtering and clustering so analysts could spot what mattered quickly.",
       "Built a chatbot UI on CopilotKit backed by FastAPI and LangChain, letting users query incident data in plain language.",
       "Shipped an incident digests viewer in Next.js with role-based auth, so different user groups only saw what was relevant to them.",
@@ -125,6 +133,27 @@ export const projects = [
     description:
       "Migrated legacy on-premise banking applications to Azure and modernized the frontend with ES Modules, Web Components, and Lit.",
     tags: ["Azure", "Web Components", "Lit"],
+    href: "",
+  },
+  {
+    name: "MyLook",
+    description:
+      "AR-based omni-channel shopping experience letting users try on and buy contact lenses. Built the frontend for an early augmented-reality commerce product.",
+    tags: ["JavaScript", "AR", "E-commerce"],
+    href: "",
+  },
+  {
+    name: "SmartKPIs",
+    description:
+      "Led the team building a goal-tracking application for employee KPIs — tracking, notifications, and a customized dashboard for reviewing team goals.",
+    tags: ["React.js", "Drupal 8", "PHP", "Webpack"],
+    href: "",
+  },
+  {
+    name: "InforMEA & UNCCD — UN Digital Platforms",
+    description:
+      "Built glossary and autocomplete search for the UN's InforMEA portal, and a Q&A feature for the UN Convention to Combat Desertification's official site.",
+    tags: ["Drupal", "PHP"],
     href: "",
   },
   {
