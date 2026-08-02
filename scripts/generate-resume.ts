@@ -11,11 +11,15 @@ import {
 } from "docx";
 import {
   profile,
-  experience,
+  resumeExperience,
   earlierRoles,
   skills,
   education,
 } from "../src/data/resume";
+
+const resumeSocial = profile.social.filter(
+  (s) => s.label === "GitHub" || s.label === "LinkedIn",
+);
 
 const numbering = {
   config: [
@@ -74,7 +78,7 @@ const children: Paragraph[] = [
   new Paragraph({
     children: [
       new TextRun({
-        text: profile.social.map((s) => s.href.replace(/^https?:\/\//, "")).join("  |  "),
+        text: resumeSocial.map((s) => s.href.replace(/^https?:\/\//, "")).join("  |  "),
         size: 20,
       }),
     ],
@@ -83,18 +87,6 @@ const children: Paragraph[] = [
 
   heading("Summary"),
   new Paragraph({ text: profile.bio, spacing: { after: 80 } }),
-
-  heading("Experience"),
-  ...experience.flatMap((job) => [
-    jobTitle(job.role, job.org, job.location, job.period),
-    ...job.bullets.map(bullet),
-  ]),
-
-  new Paragraph({
-    children: [new TextRun({ text: `Earlier roles (2012 — 2020)`, bold: true })],
-    spacing: { before: 200, after: 60 },
-  }),
-  ...earlierRoles.map((r) => bullet(`${r.role} — ${r.summary}`)),
 
   heading("Skills"),
   ...Object.entries(skills).map(
@@ -107,6 +99,18 @@ const children: Paragraph[] = [
         ],
       }),
   ),
+
+  heading("Experience"),
+  ...resumeExperience.flatMap((job) => [
+    jobTitle(job.role, job.org, job.location, job.period),
+    ...job.bullets.map(bullet),
+  ]),
+
+  new Paragraph({
+    children: [new TextRun({ text: `Earlier roles (2012 — 2020)`, bold: true })],
+    spacing: { before: 200, after: 60 },
+  }),
+  ...earlierRoles.map((r) => bullet(`${r.role} — ${r.summary}`)),
 
   heading("Education"),
   new Paragraph({

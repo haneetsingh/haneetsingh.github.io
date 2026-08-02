@@ -82,6 +82,30 @@ export const experience = [
   },
 ];
 
+// Used only for the downloadable résumé — keeps the consulting work as one
+// section instead of the two engagement entries shown on the site.
+export const resumeExperience = [
+  {
+    role: "Software Engineering Consultant",
+    org: "Self-employed",
+    location: "Remote",
+    period: "Mar 2025 — Present",
+    bullets: [
+      "Leading a platform engagement with Liberty Mutual (Oct 2025–present) as Senior Software Engineer, providing technical leadership on an enterprise platform supporting thousands of users in a regulated environment.",
+      "Own the design and delivery of core platform capabilities that support critical operational workflows for the business.",
+      "Set engineering standards, code review practices, and process improvements for the team.",
+      "Guide engineers through complex technical implementations while keeping solutions scalable and maintainable.",
+      "Work with product and engineering leadership to keep architecture decisions aligned with both business goals and compliance requirements.",
+      "Built and maintained web applications for the Everstream Analytics supply chain risk platform (Mar–Aug 2025) using TypeScript, Next.js, Tailwind CSS, and Django, with a strong focus on accessibility and pixel-accurate UI.",
+      "Built an interactive geospatial incidents map visualizing thousands of global disruption events, with filtering and clustering so analysts could spot what mattered quickly.",
+      "Built a chatbot UI on CopilotKit backed by FastAPI and LangChain, letting users query incident data in plain language.",
+      "Shipped an incident digests viewer in Next.js with role-based auth, so different user groups only saw what was relevant to them.",
+      "Refactored key backend API endpoints to cut redundant calls and improve response times across the platform.",
+    ],
+  },
+  ...experience.slice(2),
+];
+
 export const earlierRoles = [
   {
     role: "Contract Software Consultant",
@@ -155,13 +179,6 @@ export const projects = [
       "Built glossary and autocomplete search for the UN's InforMEA portal, and a Q&A feature for the UN Convention to Combat Desertification's official site.",
     tags: ["Drupal", "PHP"],
     href: "",
-  },
-  {
-    name: "This Portfolio",
-    description:
-      "Retired a 2019 Gatsby template for a static Astro site, with GitHub Actions handling the deploy.",
-    tags: ["Astro", "TypeScript", "GitHub Actions"],
-    href: "https://github.com/haneetsingh/haneetsingh.github.io",
   },
 ];
 
