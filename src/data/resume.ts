@@ -10,7 +10,6 @@ export const profile = {
     { label: "GitHub", href: "https://github.com/haneetsingh" },
     { label: "LinkedIn", href: "https://linkedin.com/in/haneetsingh/" },
     { label: "Twitter", href: "https://twitter.com/iSinghHaneet" },
-    { label: "Drupal.org", href: "https://drupal.org/u/singh_haneet" },
   ],
 };
 

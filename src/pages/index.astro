@@ -45,10 +45,10 @@ import {
       {experience.map((job) => (
         <div class="entry">
           <div class="entry-head">
-            <h3>{job.role}</h3>
             <span class="period">{job.period}</span>
+            <h3 class="job-title">{job.org === "Self-employed" ? job.role : `${job.org} - ${job.role}`}</h3>
           </div>
-          <p class="org">{job.org} · {job.location}</p>
+          <p class="org job-location">{job.location}</p>
           <ul>
             {job.bullets.map((b) => <li>{b}</li>)}
           </ul>

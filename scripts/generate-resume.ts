@@ -14,10 +14,9 @@ const resumeSocial = profile.social.filter(
   (s) => s.label === "GitHub" || s.label === "LinkedIn",
 );
 
-const outPath = path.join(
-  path.dirname(fileURLToPath(import.meta.url)),
-  "../public/Haneet_Singh_Resume.pdf",
-);
+const scriptDir = path.dirname(fileURLToPath(import.meta.url));
+const fontsDir = path.join(scriptDir, "fonts");
+const outPath = path.join(scriptDir, "../public/Haneet_Singh_Resume.pdf");
 
 const doc = new PDFDocument({
   size: "LETTER",
@@ -25,6 +24,11 @@ const doc = new PDFDocument({
   info: { Title: `${profile.name}: Resume`, Author: profile.name },
 });
 doc.pipe(createWriteStream(outPath));
+
+doc.registerFont("Regular", path.join(fontsDir, "Lato-Regular.ttf"));
+doc.registerFont("Bold", path.join(fontsDir, "Lato-Bold.ttf"));
+doc.registerFont("Italic", path.join(fontsDir, "Lato-Italic.ttf"));
+doc.registerFont("BoldItalic", path.join(fontsDir, "Lato-BoldItalic.ttf"));
 
 const ACCENT = "#0f766e";
 const TEXT = "#1a1a1a";
@@ -36,7 +40,7 @@ const heading = (text: string) => {
   doc
     .fontSize(12)
     .fillColor(ACCENT)
-    .font("Helvetica-Bold")
+    .font("Bold")
     .text(text.toUpperCase(), { characterSpacing: 0.5 });
   doc
     .moveTo(doc.x, doc.y + 2)
@@ -49,15 +53,16 @@ const heading = (text: string) => {
 
 const jobHeader = (role: string, org: string, location: string, period: string) => {
   const startY = doc.y;
-  doc.fontSize(10.5).fillColor(TEXT).font("Helvetica-Bold").text(role, { continued: false });
-  doc.fontSize(9.5).fillColor(DIM).font("Helvetica").text(`${org}: ${location}`);
+  const heading = org === "Self-employed" ? role : `${org} - ${role}`;
+  doc.fontSize(10.5).fillColor(TEXT).font("BoldItalic").text(heading, { continued: false });
   const afterY = doc.y;
   doc
     .fontSize(9)
     .fillColor(DIM)
-    .font("Helvetica-Oblique")
+    .font("Italic")
     .text(period, doc.page.margins.left, startY, { width: contentWidth, align: "right" });
   doc.y = afterY;
+  doc.fontSize(9.5).fillColor(DIM).font("Italic").text(location);
   doc.moveDown(0.3);
 };
 
@@ -65,18 +70,18 @@ const bullet = (text: string) => {
   doc
     .fontSize(9.5)
     .fillColor(TEXT)
-    .font("Helvetica")
+    .font("Regular")
     .text(`•  ${text}`, { indent: 10, width: contentWidth - 10 });
 };
 
 // Header
-doc.fontSize(22).fillColor(TEXT).font("Helvetica-Bold").text(profile.name);
-doc.fontSize(11).fillColor(ACCENT).font("Helvetica").text(`${profile.title} - ${profile.tagline}`);
+doc.fontSize(22).fillColor(TEXT).font("Bold").text(profile.name);
+doc.fontSize(11).fillColor(ACCENT).font("Regular").text(`${profile.title} - ${profile.tagline}`);
 doc.moveDown(0.2);
 doc
   .fontSize(9.5)
   .fillColor(DIM)
-  .font("Helvetica")
+  .font("Regular")
   .text(`${profile.location}  |  ${profile.email}  |  ${profile.phone}`);
 doc
   .fontSize(9.5)
@@ -85,14 +90,14 @@ doc
 
 // Summary
 heading("Summary");
-doc.fontSize(9.5).fillColor(TEXT).font("Helvetica").text(profile.bio, { align: "left" });
+doc.fontSize(9.5).fillColor(TEXT).font("Regular").text(profile.bio, { align: "left" });
 
 // Skills
 heading("Skills");
 for (const [category, list] of Object.entries(skills)) {
   doc.fontSize(9.5).fillColor(TEXT);
-  doc.font("Helvetica-Bold").text(`${category}: `, { continued: true });
-  doc.font("Helvetica").text(list.join(", "));
+  doc.font("Bold").text(`${category}: `, { continued: true });
+  doc.font("Regular").text(list.join(", "));
 }
 
 // Experience
@@ -104,14 +109,14 @@ resumeExperience.forEach((job, i) => {
 });
 
 doc.moveDown(0.5);
-doc.fontSize(9.5).fillColor(TEXT).font("Helvetica-Bold").text("Earlier roles (2012 – 2020)");
+doc.fontSize(9.5).fillColor(TEXT).font("Bold").text("Earlier roles (2012 – 2020)");
 doc.moveDown(0.2);
 earlierRoles.forEach((r) => bullet(`${r.role}: ${r.summary}`));
 
 // Education
 heading("Education");
-doc.fontSize(9.5).fillColor(TEXT).font("Helvetica-Bold").text(education.degree);
-doc.fontSize(9.5).fillColor(DIM).font("Helvetica").text(`${education.school}  |  ${education.period}`);
+doc.fontSize(9.5).fillColor(TEXT).font("Bold").text(education.degree);
+doc.fontSize(9.5).fillColor(DIM).font("Regular").text(`${education.school}  |  ${education.period}`);
 
 doc.end();
 console.log(`Generated ${outPath}`);
