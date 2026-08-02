@@ -2,6 +2,15 @@
   "name": "portfolio",
   "type": "module",
   "version": "0.0.1",
+  "private": true,
+  "description": "Personal portfolio site for Haneet Singh",
+  "author": "Haneet Singh <singh.haneet007@gmail.com>",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/haneetsingh/haneetsingh.github.io"
+  },
+  "homepage": "https://haneetsingh.github.io",
   "engines": {
     "node": ">=22.12.0"
   },
@@ -17,6 +26,8 @@
     "astro": "^7.1.6"
   },
   "devDependencies": {
+    "@types/node": "^26.1.2",
+    "@types/pdfkit": "^0.17.6",
     "pdfkit": "^0.19.1",
     "tsx": "^4.23.4"
   }
