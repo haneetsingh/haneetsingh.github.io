@@ -1,16 +1,15 @@
 export const profile = {
   name: "Haneet Singh",
   title: "Technical Lead / Senior Software Engineer",
-  tagline: "TypeScript, Next.js, Node.js",
+  tagline: "TypeScript, React, Node.js",
   location: "Toronto, Canada",
   email: "singh.haneet007@gmail.com",
   phone: "(647) 868-3930",
-  bio: "Fifteen years building web products, the last several years at a staff or lead level across fintech, supply chain and banking. I own codebases end to end, from architecture and hands-on delivery to managing the team that ships it. TypeScript is home base across the stack - React, Next.js, Node.js. Most of that time has been spent dropped into regulated or high-stakes environments, where the job is getting a team moving fast without breaking things.",
-  metaDescription: "Portfolio of Haneet Singh, a Toronto-based technical lead and senior software engineer working in TypeScript, Next.js, and Node.js.",
+  bio: "Fifteen years building web products, the last several years at a staff or lead level across fintech, supply chain and banking. I own codebases end to end, from architecture and hands-on delivery to managing the team that ships it. TypeScript is home base across the stack - React, Node.js. Most of that time has been spent dropped into regulated or high-stakes environments, where the job is getting a team moving fast without breaking things.",
+  metaDescription: "Portfolio of Haneet Singh, a Toronto-based technical lead and senior software engineer working in TypeScript, React, and Node.js.",
   social: [
     { label: "GitHub", href: "https://github.com/haneetsingh" },
     { label: "LinkedIn", href: "https://linkedin.com/in/haneetsingh/" },
-    { label: "Twitter", href: "https://twitter.com/iSinghHaneet" },
   ],
 };
 
@@ -25,6 +24,7 @@ export const experience = [
       "Own the design and delivery of core platform capabilities that support critical operational workflows for the business.",
       "Set engineering standards, code review practices and process improvements for the team.",
       "Guide engineers through complex technical implementations while keeping solutions scalable and maintainable.",
+      "Work extensively in React micro-frontends (MFE) and GraphQL subgraphs as part of the platform's federated architecture.",
       "Work with product and engineering leadership to keep architecture decisions aligned with both business goals and compliance requirements.",
     ],
   },
@@ -95,6 +95,7 @@ export const resumeExperience = [
       "Own the design and delivery of core platform capabilities that support critical operational workflows for the business.",
       "Set engineering standards, code review practices and process improvements for the team.",
       "Guide engineers through complex technical implementations while keeping solutions scalable and maintainable.",
+      "Work extensively in React micro-frontends (MFE) and GraphQL subgraphs as part of the platform's federated architecture.",
       "Work with product and engineering leadership to keep architecture decisions aligned with both business goals and compliance requirements.",
       "Built and maintained web applications for the Everstream Analytics supply chain risk platform (Mar–Aug 2025) using TypeScript, Next.js, Tailwind CSS and Django, with a strong focus on accessibility and pixel-accurate UI.",
       "Built an interactive geospatial incidents map visualizing thousands of global disruption events, with filtering and clustering so analysts could spot what mattered quickly.",
@@ -134,8 +135,8 @@ export const projects = [
   {
     name: "Liberty Mutual: Enterprise Platform",
     description:
-      "Technical leadership on an enterprise platform used by thousands of people in a regulated industry. Owned the design and delivery of the core features that run day-to-day operations.",
-    tags: ["TypeScript", "Next.js", "Node.js"],
+      "Technical leadership on an enterprise platform used by thousands of people in a regulated industry. Owned the design and delivery of the core features that run day-to-day operations, working extensively in React micro-frontends and GraphQL subgraphs.",
+    tags: ["TypeScript", "React", "GraphQL", "Node.js"],
     href: "",
   },
   {
